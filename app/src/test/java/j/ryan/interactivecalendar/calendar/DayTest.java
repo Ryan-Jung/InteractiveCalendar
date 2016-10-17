@@ -22,7 +22,7 @@ public class DayTest {
 
         //check if important reminder is placed first in the list
         day.addReminder("!important reminder");
-        assertTrue(day.getReminders().get(0).equals("!important reminder"));
+        assertTrue(day.getReminders().get(0).equals("important reminder"));
 
     }
 

@@ -12,7 +12,7 @@ public class Day {
     private ArrayList<String> reminders;
 
     public Day(){
-        reminders = new ArrayList<String>();
+        reminders = new ArrayList<>();
     }
 
     /**
@@ -24,21 +24,21 @@ public class Day {
     }
 
     /**
-     * Adds the reminder to the end of the list. If the reminder starts with a '!', for important
-     * reminders, it will be the first to be displayed. Reminders will be organized by the order
+     * Adds the reminder to the end of the list. If the reminder starts with a '!', for an important
+     * reminder, it will be the first to be displayed. Reminders will be organized by the order
      * in which they are added.
      * @param reminder - The reminder/message for the day
      */
     public void addReminder(String reminder){
         if(reminder.charAt(0) == '!'){
-            reminders.add(0,reminder);
+            reminders.add(0,reminder.substring(1,reminder.length()));
         }
         reminders.add(reminder);
     }
 
     /**
      * Removes a reminder at the specified location.
-     * @param reminderIndex
+     * @param reminderIndex - the index of the reminder. First reminder has an index of 0;
      * @return The reminder that was removed, or null if no reminder was removed.
      */
     public String deleteReminder(int reminderIndex){
